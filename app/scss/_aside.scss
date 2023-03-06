@@ -1,0 +1,89 @@
+.aside {
+  display: none;
+
+
+
+
+
+
+  @include for-desktop-up {
+    display: initial;
+  }
+
+  .aside-left {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    margin-left: 5rem;
+    margin-bottom: 10rem;
+
+    transform: translateX(100%);
+
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    a {
+      font-size: $subHeadingSize;
+      color: $lighter;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 2px;
+      height: 80px;
+      position: absolute;
+      left: 50%;
+      bottom: -100px;
+      z-index: -1;
+      transform: translateX(-50%);
+      background-color: $primary;
+    }
+
+  }
+
+  .aside-right {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+
+    margin-right: 5rem;
+    margin-bottom: 10rem;
+
+    transform: translateX(-100%);
+
+    a {
+      font-size: 1.2rem;
+      color: $lighter;
+      letter-spacing: 8px;
+      writing-mode: vertical-rl;
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        color: $secondary;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 2px;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      bottom: -100px;
+      z-index: -1;
+      transform: translateX(-50%);
+      background-color: $primary;
+    }
+
+  }
+
+}

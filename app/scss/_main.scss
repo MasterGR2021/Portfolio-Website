@@ -1,0 +1,76 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+
+  height: 100vh;
+
+  #head-1 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $secondary;
+
+    @include for-desktop-up {
+      font-size: 1.8rem;
+    }
+  }
+
+  #head-2 {
+    font-size: 4rem;
+    color: $light;
+
+    @include for-desktop-up {
+      font-size: 6rem;
+    }
+  }
+
+  #head-3 {
+    font-size: 3rem;
+    color: $lighter;
+
+    @include for-desktop-up {
+      font-size: 4rem;
+    }
+
+  }
+
+  #head-4 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $lighter;
+
+    @include for-desktop-up {
+      max-width: 50rem;
+
+      font-size: 1.8rem;
+    }
+  }
+
+  div {
+    display: flex;
+  }
+
+  #contact {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    margin-top: 5rem;
+    padding: 2rem;
+
+    font-size: $contentSize;
+    color: $light;
+
+    border: 2px solid $primary;
+    border-radius: 5px;
+
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(144, 49, 116, 0.5);
+
+      border: 2px dotted $secondary;
+    }
+  }
+}

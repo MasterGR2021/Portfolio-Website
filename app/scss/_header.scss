@@ -1,0 +1,164 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 2.5rem 2rem;
+
+  background-color: rgba(32, 38, 46, 0.8);
+  transition: all .5s ease-in-out;
+
+
+  @include for-desktop-up {
+    padding: 3rem 8rem;
+  }
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(32, 38, 46, .5);
+    backdrop-filter: blur(5px);
+  }
+
+  .brand {
+    border-bottom: 2px solid $primary;
+
+    h1 a {
+      color: $secondary;
+
+      font-size: $headingSize;
+    }
+  }
+
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 99;
+
+    height: 100vh;
+    width: 50vw;
+    max-width: 40rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: $light;
+    background-color: $lighDark;
+
+    transition: all .3s ease-in-out;
+
+    @include for-desktop-up {
+      position: initial;
+
+      height: auto;
+      width: auto;
+      max-width: none;
+
+      flex-direction: row;
+      gap: 3rem;
+
+      background-color: transparent;
+    }
+
+    #closeBtn {
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      padding: 1rem 2rem;
+
+      font-size: 2.5rem;
+
+      cursor: pointer;
+
+      @include for-desktop-up {
+        display: none;
+      }
+    }
+
+    li {
+      width: 100%;
+      height: 6rem;
+    }
+
+    a {
+      height: 100%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: $light;
+
+      font-size: $contentSize;
+      text-align: center;
+
+      transition: all .3s ease-in-out;
+
+      &:hover {
+        color: $secondary;
+        background-color: $dark;
+
+        @include for-desktop-up {
+          background-color: transparent;
+        }
+      }
+    }
+
+    &.open {
+      right: 0;
+    }
+
+    #downloadBtn {
+      display: flex;
+      gap: 0.5rem;
+
+      padding: 0 2rem;
+
+      border: 2px dotted $primary;
+      border-radius: 5px;
+
+      &:hover {
+        color: $light;
+
+        background-color: rgba(144, 49, 116, 0.5);
+
+        border: 2px solid $secondary;
+      }
+
+    }
+  }
+
+  #menuBtn {
+    display: flex;
+    align-items: center;
+
+    color: $secondary;
+
+    font-size: $menuBtnSize;
+
+    cursor: pointer;
+
+    @include for-desktop-up {
+      display: none;
+    }
+  }
+
+}
